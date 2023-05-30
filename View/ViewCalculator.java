@@ -2,8 +2,8 @@ package View;
 
 import java.util.Scanner;
 
-import Model.Calculable;
-import Model.ICalculableFactory;
+import CalculatorModel.Calculable;
+import CalculatorModel.ICalculableFactory;
 
 public class ViewCalculator {
 

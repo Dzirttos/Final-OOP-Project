@@ -1,4 +1,4 @@
-package Model;
+package CalculatorModel;
 
 public final class Calculator implements Calculable {
 

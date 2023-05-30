@@ -1,5 +1,9 @@
-import Model.CalculableFactory;
-import Model.ICalculableFactory;
+import javax.swing.plaf.synth.SynthOptionPaneUI;
+
+import CalculatorModel.CalcFactory;
+import CalculatorModel.CalculableFactory;
+import CalculatorModel.ICalculableFactory;
+import CalculatorModel.LogConsole;
 import View.ViewCalculator;
 
 /**
@@ -9,10 +13,12 @@ import View.ViewCalculator;
 public class Main {
     public static void main(String[] args) {
         System.out.print("\033[H\033[J");
-        
+
         ICalculableFactory calculableFactory = new CalculableFactory();
-        ViewCalculator view = new ViewCalculator(calculableFactory);
+        ICalculableFactory calcFactory = new CalcFactory(new LogConsole(), calculableFactory);
+        ViewCalculator view = new ViewCalculator(calcFactory);
         view.run();
+        
     }
 }
 

@@ -1,4 +1,4 @@
-package Model;
+package CalculatorModel;
 
 public interface Calculable {
     Calculable sum(int arg);
