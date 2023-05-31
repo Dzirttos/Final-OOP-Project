@@ -4,32 +4,54 @@ import CalculatorModel.Calculable;
 
 public class CalculatorLogger implements Calculable {
 
-    private Loggable log;
+    private Loggable log1;
+    private Loggable log2;
     private Calculable calc;
 
-    public CalculatorLogger(Loggable log, Calculable calc) {
+    public CalculatorLogger(Loggable log1, Loggable log2, Calculable calc) {
         super();
-        this.log = log;
+        this.log1 = log1;
+        this.log2 = log2;
         this.calc = calc;
-        log.log("Первый аргумент равен: " + calc.getResult());
+        log1.log("Часть комплексного числа равна: " + calc.getResultReal());
+
     }
 
     @Override
-    public Calculable sum(int arg) {
-        log.log("Суммируем: " + arg);
-        return calc.sum(arg);
+    public Calculable sumReal(int arg) {
+        log1.log("Суммируем вещественную часть другого числа: " + arg);
+        return calc.sumReal(arg);
     }
 
     @Override
-    public Calculable subtract(int arg) {
-        log.log("Вычитаем: " + arg);
-        return calc.subtract(arg);
+    public Calculable sumImaginary(int arg) {
+        log2.log("Суммируем мнимую  часть другого числа: " + arg);
+        return calc.sumImaginary(arg);
     }
 
     @Override
-    public int getResult() {
-        int temp = calc.getResult();
-        log.log("Результат: " + temp);
+    public Calculable subtractReal(int arg) {
+        log1.log("Вычитаем вещественную часть другого числа: " + arg);
+        return calc.subtractReal(arg);
+    }
+
+    @Override
+    public Calculable subtractImaginary(int arg) {
+        log2.log("Вычитаем мнимую часть другого числа: " + arg);
+        return calc.subtractImaginary(arg);
+    }
+
+    @Override
+    public int getResultReal() {
+        int temp = calc.getResultReal();
+        log1.log("Результат сложения вещественных частей: " + temp);
+        return temp;
+    }
+
+    @Override
+    public int getResultImaginary() {
+        int temp = calc.getResultReal();
+        log2.log("Результат сложения мнимых частей: " + temp);
         return temp;
     }
 

@@ -24,20 +24,20 @@ public class ViewCalculator {
                 if (cmd.equals("-")) {
                     int nextRealArg = promptInt("Введите вещественную часть второго числа:  ");
                     int nextImaginaryArg = promptInt("Введите мнимую часть второго числа:  ");
-                    calculator1.subtract(nextRealArg);
-                    calculator2.subtract(nextImaginaryArg);
+                    calculator1.subtractReal(nextRealArg);
+                    calculator2.subtractImaginary(nextImaginaryArg);
                     continue;
                 }
                 if (cmd.equals("+")) {
                     int nextRealArg = promptInt("Введите вещественную часть второго числа:  ");
                     int nextImaginaryArg = promptInt("Введите мнимую часть второго числа:  ");
-                    calculator1.sum(nextRealArg);
-                    calculator2.sum(nextImaginaryArg);
+                    calculator1.sumReal(nextRealArg);
+                    calculator2.sumImaginary(nextImaginaryArg);
                     continue;
                 }
                 if (cmd.equals("=")) {
-                    int realResult = calculator1.getResult();
-                    int imaginaryResult = calculator2.getResult();
+                    int realResult = calculator1.getResultReal();
+                    int imaginaryResult = calculator2.getResultImaginary();
                     System.out.println("Результат:" + realResult + " + i"+imaginaryResult);
                     break;
                 }
