@@ -15,23 +15,30 @@ public class ViewCalculator {
 
     public void run() {
         while (true) {
-            int primaryArg = promptInt("Введите первый аргумент: ");
-            Calculable calculator = calculableFactory.create(primaryArg);
+            int realArg = promptInt("Введите вещественную часть первого числа: ");
+            Calculable calculator1 = calculableFactory.create(realArg);
+            int imaginaryArg = promptInt("Введите мнимую часть первого числа: ");
+            Calculable calculator2 = calculableFactory.create(imaginaryArg);
             while (true) {
                 String cmd = prompt("Введите команду (+, -, =) : ");
                 if (cmd.equals("-")) {
-                    int arg = promptInt("Введите второй аргумент: ");
-                    calculator.subtract(arg);
+                    int nextRealArg = promptInt("Введите вещественную часть второго числа:  ");
+                    int nextImaginaryArg = promptInt("Введите мнимую часть второго числа:  ");
+                    calculator1.subtract(nextRealArg);
+                    calculator2.subtract(nextImaginaryArg);
                     continue;
                 }
                 if (cmd.equals("+")) {
-                    int arg = promptInt("Введите второй аргумент: ");
-                    calculator.sum(arg);
+                    int nextRealArg = promptInt("Введите вещественную часть второго числа:  ");
+                    int nextImaginaryArg = promptInt("Введите мнимую часть второго числа:  ");
+                    calculator1.sum(nextRealArg);
+                    calculator2.sum(nextImaginaryArg);
                     continue;
                 }
                 if (cmd.equals("=")) {
-                    int result = calculator.getResult();
-                    System.out.printf("Результат %d\n", result);
+                    int realResult = calculator1.getResult();
+                    int imaginaryResult = calculator2.getResult();
+                    System.out.println("Результат:" + realResult + " + i"+imaginaryResult);
                     break;
                 }
             }

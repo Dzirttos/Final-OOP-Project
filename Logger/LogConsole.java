@@ -1,8 +1,6 @@
-package CalculatorModel;
+package Logger;
 
 import java.time.LocalDateTime;
-
-import Logger.Loggable;
 
 public class LogConsole implements Loggable {
 

@@ -1,6 +1,7 @@
-package CalculatorModel;
+package Logger;
 
-import Logger.Loggable;
+import CalculatorModel.Calculable;
+import CalculatorModel.ICalculableFactory;
 
 public class CalcFactory implements ICalculableFactory {
 
